@@ -1,0 +1,30 @@
+[
+	{
+        "keys": ["super+1"], "command": "markdown_helper",
+        "args": {"md_type": "h1"}
+    }
+    ,{
+        "keys": ["super+2"], "command": "markdown_helper",
+        "args": {"md_type": "h2"}
+    }
+    ,{
+        "keys": ["super+3"], "command": "markdown_helper",
+        "args": {"md_type": "h3"}
+    }
+    ,{
+        "keys": ["super+4"], "command": "markdown_helper",
+        "args": {"md_type": "ul"}
+    }
+    ,{
+        "keys": ["super+5"], "command": "markdown_helper",
+        "args": {"md_type": "ol"}
+    }
+    ,{
+        "keys": ["super+6"], "command": "markdown_helper",
+        "args": {"md_type": "code"}
+    }
+    ,{
+        "keys": ["super+7"], "command": "markdown_helper",
+        "args": {"md_type": "lxf"}
+    }
+]
