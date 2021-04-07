@@ -29,12 +29,19 @@ git clone https://github.com/taseikyo/sublime-markdown-helper.git
 | Keyboard shortcut |	Description  |
 |-------------------|----------------|
 |ctrl + 1-3         |h1 - h3         |
-|ctrl + 4	        |ul              |
-|ctrl + 5			|ol 			 |
-|ctrl + 6			|code (block codes)|
+|ctrl + 4	        |unordered list  |
+|ctrl + shift + 4	|task list       |
+|ctrl + 5			|ordered list  	 |
+|ctrl + 6			|code (block)    |
+|ctrl + shift + 6	|code (inline)   |
 |ctrl + 7			|latex formula (block)|
+|ctrl + shift + 7	|latex formula (inline)|
+|ctrl + b	        |bold            |
+|ctrl + d	        |deleted         |
+|ctrl + i	        |italic          |
+|ctrl + m	        |image           |
 
-**Note: Remember to select the entire line before you press the shortcuts.**
+**Note: Remember to select the entire line before you press the shortcuts. (except for inline code/latex formula, bold, italic, deleted text, and image)**
 
 ## License
 

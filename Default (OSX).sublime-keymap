@@ -1,30 +1,58 @@
 [
-	{
-        "keys": ["super+1"], "command": "markdown_helper",
+    {
+        "keys": ["ctrl+1"], "command": "markdown_helper",
         "args": {"md_type": "h1"}
     }
     ,{
-        "keys": ["super+2"], "command": "markdown_helper",
+        "keys": ["ctrl+2"], "command": "markdown_helper",
         "args": {"md_type": "h2"}
     }
     ,{
-        "keys": ["super+3"], "command": "markdown_helper",
+        "keys": ["ctrl+3"], "command": "markdown_helper",
         "args": {"md_type": "h3"}
     }
     ,{
-        "keys": ["super+4"], "command": "markdown_helper",
+        "keys": ["ctrl+4"], "command": "markdown_helper",
         "args": {"md_type": "ul"}
     }
     ,{
-        "keys": ["super+5"], "command": "markdown_helper",
+        "keys": ["ctrl+shift+4"], "command": "markdown_helper",
+        "args": {"md_type": "tl"}
+    }
+    ,{
+        "keys": ["ctrl+5"], "command": "markdown_helper",
         "args": {"md_type": "ol"}
     }
     ,{
-        "keys": ["super+6"], "command": "markdown_helper",
+        "keys": ["ctrl+6"], "command": "markdown_helper",
         "args": {"md_type": "code"}
     }
     ,{
-        "keys": ["super+7"], "command": "markdown_helper",
+        "keys": ["ctrl+shift+6"], "command": "markdown_helper",
+        "args": {"md_type": "icode"}
+    }
+    ,{
+        "keys": ["ctrl+7"], "command": "markdown_helper",
         "args": {"md_type": "lxf"}
+    }
+    ,{
+        "keys": ["ctrl+shift+7"], "command": "markdown_helper",
+        "args": {"md_type": "ilxf"}
+    }
+    ,{
+        "keys": ["ctrl+b"], "command": "markdown_helper",
+        "args": {"md_type": "bt"}
+    }
+    ,{
+        "keys": ["ctrl+i"], "command": "markdown_helper",
+        "args": {"md_type": "it"}
+    }
+    ,{
+        "keys": ["ctrl+d"], "command": "markdown_helper",
+        "args": {"md_type": "dt"}
+    }
+    ,{
+        "keys": ["ctrl+m"], "command": "markdown_helper",
+        "args": {"md_type": "img"}
     }
 ]

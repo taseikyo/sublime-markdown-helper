@@ -31,12 +31,26 @@ class MarkdownHelperCommand(sublime_plugin.TextCommand):
             self.helper_hx(edit, int(md_type[1]))
         elif md_type == "ul":
             self.helper_ul(edit)
+        elif md_type == "tl":
+            self.helper_tl(edit)
         elif md_type == "ol":
             self.helper_ol(edit)
         elif md_type == "code":
             self.helper_code(edit)
+        elif md_type == "icode":
+            self.helper_text(edit, "`")
         elif md_type == "lxf":
             self.helper_lxf(edit)
+        elif md_type == "ilxf":
+            self.helper_text(edit, "$")
+        elif md_type == "bt":
+            self.helper_text(edit, "**")
+        elif md_type == "it":
+            self.helper_text(edit, "*")
+        elif md_type == "dt":
+            self.helper_text(edit, "~~")
+        elif md_type == "img":
+            self.helper_text(edit, "![](", ")")
 
     def helper_h1(self, edit):
         """
@@ -72,14 +86,12 @@ class MarkdownHelperCommand(sublime_plugin.TextCommand):
                 for subregion in subregions:
                     line = self.view.line(subregion)
                     # st3 uses py3.3, we cannot use f-strings ;(
-                    text = "#" * level + " " + \
-                        self.view.substr(line).lstrip() + "\n"
+                    text = "#" * level + " " + self.view.substr(line).lstrip() + "\n"
                     new_text.append(text)
 
                 # remove the old text and insert...
                 self.view.erase(edit, region)
-                self.view.insert(
-                    edit, subregions[0].begin(), "".join(new_text))
+                self.view.insert(edit, subregions[0].begin(), "".join(new_text))
 
     def helper_ul(self, edit):
         """
@@ -105,8 +117,33 @@ class MarkdownHelperCommand(sublime_plugin.TextCommand):
 
                 # remove the old text and insert...
                 self.view.erase(edit, region)
-                self.view.insert(
-                    edit, subregions[0].begin(), "".join(new_text))
+                self.view.insert(edit, subregions[0].begin(), "".join(new_text))
+
+    def helper_tl(self, edit):
+        """
+        generate task list
+        ---
+        aaa
+        bbb
+        ccc
+        =>
+        - [] aaa
+        - [] bbb
+        - [] ccc
+        """
+        for region in self.view.sel():
+            if not region.empty():
+                subregions = self.view.lines(region)
+                new_text = []
+                for subregion in subregions:
+                    line = self.view.line(subregion)
+                    # st3 uses py3.3, we cannot use f-strings ;(
+                    text = "- [ ] " + self.view.substr(line).lstrip() + "\n"
+                    new_text.append(text)
+
+                # remove the old text and insert...
+                self.view.erase(edit, region)
+                self.view.insert(edit, subregions[0].begin(), "".join(new_text))
 
     def helper_ol(self, edit):
         """
@@ -128,15 +165,13 @@ class MarkdownHelperCommand(sublime_plugin.TextCommand):
                     line = self.view.line(subregion)
                     # st3 uses py3.3, we cannot use f-strings ;(
                     text = (
-                        str(index + 1) + ". " +
-                        self.view.substr(line).lstrip() + "\n"
+                        str(index + 1) + ". " + self.view.substr(line).lstrip() + "\n"
                     )
                     new_text.append(text)
 
                 # remove the old text and insert...
                 self.view.erase(edit, region)
-                self.view.insert(
-                    edit, subregions[0].begin(), "".join(new_text))
+                self.view.insert(edit, subregions[0].begin(), "".join(new_text))
 
     def helper_code(self, edit):
         """
@@ -154,12 +189,10 @@ class MarkdownHelperCommand(sublime_plugin.TextCommand):
             if not region.empty():
                 # Packages/Python/Python.tmLanguage
                 # stupid method, this will always return `Markdown`
-                syntax = self.view.settings().get(
-                    "syntax").split("/")[-1].split(".")[0]
+                syntax = self.view.settings().get("syntax").split("/")[-1].split(".")[0]
                 line = self.view.line(region)
                 # st3 uses py3.3, we cannot use f-strings ;(
-                text = "```" + syntax + "\n" + \
-                    self.view.substr(line) + "\n```\n"
+                text = "```" + syntax + "\n" + self.view.substr(line) + "\n```\n"
                 # remove the old text and insert...
                 self.view.erase(edit, region)
                 self.view.insert(edit, line.begin(), text)
@@ -184,3 +217,22 @@ class MarkdownHelperCommand(sublime_plugin.TextCommand):
                 # remove the old text and insert...
                 self.view.erase(edit, region)
                 self.view.insert(edit, line.begin(), text)
+
+    def helper_text(self, edit, begin_char, end_char=""):
+        """
+        generate style text
+        ---
+        bt => bold text: aaa -> **aaa**
+        it => italic text: aaa -> *aaa*
+        dt => delete textL aaa -> ~~aaa~~
+        """
+
+        for region in self.view.sel():
+            if not region.empty():
+                code = self.view.substr(sublime.Region(region.a, region.b))
+                # replace(edit, region, string)
+                self.view.replace(
+                    edit,
+                    region,
+                    begin_char + code + (end_char if end_char else begin_char),
+                )
