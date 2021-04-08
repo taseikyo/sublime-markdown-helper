@@ -21,6 +21,23 @@ shortcuts:
 import sublime
 import sublime_plugin
 
+PLUGIN_NAME = "MarkdownHelper"
+
+
+def load_settings():
+    return sublime.load_settings(PLUGIN_NAME + ".sublime-settings")
+
+
+class PluginEventListener(sublime_plugin.EventListener):
+    def on_query_context(self, view, key, operator, operand, match_all):
+        if key == "helper_is_enabled":
+            settings = load_settings()
+            allows = settings.get("allow_fileformats")
+            syntax = view.settings().get("syntax").split("/")[-1].split(".")[0]
+            if syntax.lower() in allows:
+                return True
+        return False
+
 
 class MarkdownHelperCommand(sublime_plugin.TextCommand):
     def run(self, edit, md_type):
@@ -226,7 +243,6 @@ class MarkdownHelperCommand(sublime_plugin.TextCommand):
         it => italic text: aaa -> *aaa*
         dt => delete textL aaa -> ~~aaa~~
         """
-
         for region in self.view.sel():
             if not region.empty():
                 code = self.view.substr(sublime.Region(region.a, region.b))

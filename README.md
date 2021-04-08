@@ -24,6 +24,18 @@ cd $ST3Packages
 git clone https://github.com/taseikyo/sublime-markdown-helper.git
 ```
 
+This plugin only works in Markdown files, if you want to add more file types, add them in the "MarkdownHelper.sublime-settings" file.
+
+```Json
+{
+    "allow_fileformats": [
+        "md",
+        "markdown",
+        // more types..
+    ]
+}
+```
+
 ### shortcuts
 
 | Keyboard shortcut |	Description  |

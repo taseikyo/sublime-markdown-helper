@@ -1,0 +1,7 @@
+{
+    "allow_fileformats": [
+        "md",
+        "markdown",
+        // more types..
+    ]
+}

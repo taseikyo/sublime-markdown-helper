@@ -1,58 +1,72 @@
 [
 	{
         "keys": ["ctrl+1"], "command": "markdown_helper",
-        "args": {"md_type": "h1"}
+        "args": {"md_type": "h1"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+2"], "command": "markdown_helper",
-        "args": {"md_type": "h2"}
+        "args": {"md_type": "h2"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+3"], "command": "markdown_helper",
-        "args": {"md_type": "h3"}
+        "args": {"md_type": "h3"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+4"], "command": "markdown_helper",
-        "args": {"md_type": "ul"}
+        "args": {"md_type": "ul"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+shift+4"], "command": "markdown_helper",
-        "args": {"md_type": "tl"}
+        "args": {"md_type": "tl"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+5"], "command": "markdown_helper",
-        "args": {"md_type": "ol"}
+        "args": {"md_type": "ol"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+6"], "command": "markdown_helper",
-        "args": {"md_type": "code"}
+        "args": {"md_type": "code"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+shift+6"], "command": "markdown_helper",
-        "args": {"md_type": "icode"}
+        "args": {"md_type": "icode"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+7"], "command": "markdown_helper",
-        "args": {"md_type": "lxf"}
+        "args": {"md_type": "lxf"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+shift+7"], "command": "markdown_helper",
-        "args": {"md_type": "ilxf"}
+        "args": {"md_type": "ilxf"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+b"], "command": "markdown_helper",
-        "args": {"md_type": "bt"}
+        "args": {"md_type": "bt"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+i"], "command": "markdown_helper",
-        "args": {"md_type": "it"}
+        "args": {"md_type": "it"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+d"], "command": "markdown_helper",
-        "args": {"md_type": "dt"}
+        "args": {"md_type": "dt"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
         "keys": ["ctrl+m"], "command": "markdown_helper",
-        "args": {"md_type": "img"}
+        "args": {"md_type": "img"},
+        "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
 ]
