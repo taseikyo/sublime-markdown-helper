@@ -11,13 +11,13 @@
             "children": [{
                     "command": "open_file",
                     "args": {
-                        "file": "${packages}/MarkdownHelper/MarkdownHelper.sublime-settings"
+                        "file": "${packages}/sublime-markdown-helper/MarkdownHelper.sublime-settings"
                     },
                     "caption": "Settings"
                 }, {
                     "command": "open_file",
                     "args": {
-                        "file": "${packages}/MarkdownHelper/Default (OSX).sublime-keymap",
+                        "file": "${packages}/sublime-markdown-helper/Default (OSX).sublime-keymap",
                         "platform": "OSX"
                     },
                     "caption": "Key Bindings"
@@ -25,7 +25,7 @@
                 {
                     "command": "open_file",
                     "args": {
-                        "file": "${packages}/MarkdownHelper/Default (Linux).sublime-keymap",
+                        "file": "${packages}/sublime-markdown-helper/Default (Linux).sublime-keymap",
                         "platform": "Linux"
                     },
                     "caption": "Key Bindings"
@@ -33,7 +33,7 @@
                 {
                     "command": "open_file",
                     "args": {
-                        "file": "${packages}/MarkdownHelper/Default (Windows).sublime-keymap",
+                        "file": "${packages}/sublime-markdown-helper/Default (Windows).sublime-keymap",
                         "platform": "Windows"
                     },
                     "caption": "Key Bindings"

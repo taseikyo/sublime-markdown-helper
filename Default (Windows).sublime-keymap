@@ -60,7 +60,7 @@
         "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }
     ,{
-        "keys": ["ctrl+d"], "command": "markdown_helper",
+        "keys": ["ctrl+shift+d"], "command": "markdown_helper",
         "args": {"md_type": "dt"},
         "context": [{"key": "helper_is_enabled", "operator": "equal", "operand": ""}]
     }

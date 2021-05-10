@@ -49,7 +49,7 @@ This plugin only works in Markdown files, if you want to add more file types, ad
 |ctrl + 7			|latex formula (block)|
 |ctrl + shift + 7	|latex formula (inline)|
 |ctrl + b	        |bold            |
-|ctrl + d	        |deleted         |
+|ctrl + shift + d	|deleted         |
 |ctrl + i	        |italic          |
 |ctrl + m	        |image           |
 
