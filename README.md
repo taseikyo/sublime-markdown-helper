@@ -55,6 +55,8 @@ This plugin only works in Markdown files, if you want to add more file types, ad
 
 **Note: Remember to select the entire line before you press the shortcuts. (except for inline code/latex formula, bold, italic, deleted text, and image)**
 
+For Mac users: ctrl -> cmd, shift -> option
+
 ## License
 
 Copyright (c) 2020 Lewis Tian. Licensed under the MIT license.
